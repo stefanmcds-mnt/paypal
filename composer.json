@@ -1,0 +1,42 @@
+{
+    "name": "stefanmcds-mnt/paypal",
+    "description": "PHP PayPal API",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "STEF@N MCDS S.a.s.",
+            "email": "info@stefan-mcds.it",
+            "homepage": "http://www.stefan-mcds.it"
+        }
+    ],
+    "homepage": "https://github.com/stefanmcds-mnt/paypal",
+    "keywords": ["Laravel", "PayPal"],
+    "require": {
+        "illuminate/support": "*",
+        "paypal/paypal-checkout-sdk": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*",
+        "orchestra/testbench": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "PayPal\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PayPal\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PayPal\\PayPalServiceProvider"
+            ],
+            "aliases": {
+                "PayPal": "PayPal\\Facades\\PayPal"
+            }
+        }
+    }
+}
