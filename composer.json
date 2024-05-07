@@ -2,6 +2,8 @@
     "name": "stefanmcds-mnt/paypal",
     "description": "PHP PayPal API",
     "license": "MIT",
+    "type": "package",
+    "version": "1.0",
     "authors": [
         {
             "name": "STEF@N MCDS S.a.s.",
@@ -10,7 +12,10 @@
         }
     ],
     "homepage": "https://github.com/stefanmcds-mnt/paypal",
-    "keywords": ["Laravel", "PayPal"],
+    "keywords": [
+        "Laravel",
+        "PayPal"
+    ],
     "require": {
         "illuminate/support": "*",
         "paypal/paypal-checkout-sdk": "*"
