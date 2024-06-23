@@ -23,43 +23,30 @@ class PayPal
     /**
      * Create a new controller instance.
      *
-     * @param string $version 'V1' | 'V2'
-     * @param string $mode    'Sandbox' | 'Live' | FALSE
-     * @return void
+     * @param array $config
      */
-    public function __construct($version = null, $mode = null)
+    public function __construct(?array $config)
     {
-        //if ($this->middleware(['auth', 'verified'])) {
-        // get PayPal confguration
-        $paypal_conf = config('paypal.' . $version . '.' . $mode);
-        //$paypal_conf = $paypal_conf[$version];
-        if ($version === 'V1') {
-        } elseif ($version === 'V2') {
-            /* setup PayPal V2 api context */
-            // PayPal Environment
-            define("PAYPAL_ENVIRONMENT", $paypal_conf['mode']);
-            // PayPal REST API endpoints
-            define("PAYPAL_ENDPOINTS", $paypal_conf['endpoint']);
-            // PayPal REST App credentials
-            define("PAYPAL_CREDENTIALS", [
-                "client_id" => $paypal_conf['client_id'],
-                "client_secret" => $paypal_conf['client_secret']
-            ]);
-            // PayPal Currency
-            define("PAYPAL_CURRENCY", $paypal_conf['currency']);
-            // PayPal REST API version
-            define("PAYPAL_REST_VERSION", $version);
-            // ButtonSource Tracker Code
-            define("SBN_CODE", "PP-DemoPortal-EC-Psdk-ORDv2-php");
-            // Set PHP variable
-            ini_set('error_reporting', E_ALL); // or error_reporting(E_ALL);
-            ini_set('display_errors', '1');
-            ini_set('display_startup_errors', '1');
-        } else {
-            exit("NO VERSION INPUT 'V1' OR 'V2'");
-        }
-
-        //}
+        /* setup PayPal V2 api context */
+        // PayPal Environment
+        define("PAYPAL_ENVIRONMENT", $config['mode']);
+        // PayPal REST API endpoints
+        define("PAYPAL_ENDPOINTS", $config['endpoint']);
+        // PayPal REST App credentials
+        define("PAYPAL_CREDENTIALS", [
+            "client_id" => $config['client_id'],
+            "client_secret" => $config['client_secret']
+        ]);
+        // PayPal Currency
+        define("PAYPAL_CURRENCY", $config['currency']);
+        // PayPal REST API version
+        define("PAYPAL_REST_VERSION", $config['version']);
+        // ButtonSource Tracker Code
+        define("SBN_CODE", "PP-DemoPortal-EC-Psdk-ORDv2-php");
+        // Set PHP variable
+        ini_set('error_reporting', E_ALL); // or error_reporting(E_ALL);
+        ini_set('display_errors', '1');
+        ini_set('display_startup_errors', '1');
     }
 
     /**********************************************************/
