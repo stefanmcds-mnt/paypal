@@ -18,7 +18,8 @@
     ],
     "require": {
         "illuminate/support": "*",
-        "paypal/paypal-checkout-sdk": "*"
+        "paypal/paypal-checkout-sdk": "*",
+        "paypal/paypal-server-sdk": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "*",
