@@ -13,9 +13,11 @@
     ],
     "homepage": "https://github.com/stefanmcds-mnt/paypal",
     "keywords": [
+        "Laravel",
         "PayPal"
     ],
     "require": {
+        "illuminate/support": "*",
         "paypal/paypal-checkout-sdk": "*",
         "paypal/paypal-server-sdk": "*"
     },
@@ -31,6 +33,16 @@
     "autoload-dev": {
         "psr-4": {
             "PayPal\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PayPal\\PayPalServiceProvider"
+            ],
+            "aliases": {
+                "PayPal": "PayPal\\Facades\\PayPal"
+            }
         }
     }
 }
