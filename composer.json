@@ -16,7 +16,6 @@
         "PayPal"
     ],
     "require": {
-        "paypal/paypal-checkout-sdk": "*",
         "paypal/paypal-server-sdk": "*"
     },
     "require-dev": {
